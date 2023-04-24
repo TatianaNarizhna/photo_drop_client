@@ -30,6 +30,14 @@ ul {
   box-sizing: border-box;
 }
 
+
+
 :root {
   --light_gray:  #F1F0EC;
+  --input_background: #F4F4F4;
+  --border: #EEEEEE;
+  --button: #3300CC;
+  --white: #fff;
+  --policy_gray: #6D6D6D;
+  
 }
