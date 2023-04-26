@@ -15,10 +15,12 @@ import {
   InputWrapp,
   Button,
   TextPolicy,
+  TextPolicyLinks,
 } from "./LoginStyled";
 
 const LogIn: FC = () => {
   const [phone, setPhone] = useState<string>("");
+  const [loader, setLoader] = useState(false);
 
   const handlePhoneChange = (value: string) => {
     setPhone(`+${value}`);
@@ -46,25 +48,31 @@ const LogIn: FC = () => {
               <svg width={13.5} height={6.5} className="arrowCustom">
                 <use xlinkHref={`${Svg}#icon-arrow_down`}></use>
               </svg>
-              <Button type="submit">Create account</Button>
+              <Button type="submit" disabled={loader}>
+                Create account
+              </Button>
               <TextPolicy>
                 By proceeding, you consent to get WhatsApp or SMS messages, from
                 PhotoDrop and its affiliates to the number provided. Text “STOP”
                 to 89203 to opt out.{" "}
               </TextPolicy>
 
-              <TextPolicy>
-                By continuing, you indicate that you have read and agree to our
-              </TextPolicy>
-              <TextPolicy>
-                <Link to="/terms" className="link">
-                  Terms of Use
-                </Link>{" "}
-                &{" "}
-                <Link to="/policy" className="link">
-                  Privacy Policy
-                </Link>
-              </TextPolicy>
+              <>
+                {" "}
+                <TextPolicyLinks>
+                  By continuing, you indicate that you have read and agree to
+                  our
+                </TextPolicyLinks>
+                <TextPolicy>
+                  <Link to="/terms" className="link">
+                    Terms of Use
+                  </Link>{" "}
+                  &{" "}
+                  <Link to="/policy" className="link">
+                    Privacy Policy
+                  </Link>
+                </TextPolicy>
+              </>
             </InputWrapp>
           </Form>
         </FormContent>

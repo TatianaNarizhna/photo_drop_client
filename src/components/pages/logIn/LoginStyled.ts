@@ -15,7 +15,11 @@ export const Form = styled.form`
 
   /* position: relative; */
 
-  & .selected-flag {
+  & .react-tel-input .selected-flag {
+    position: absolute;
+    outline: none;
+    top: 0;
+    left: 0;
   }
 
   & .react-tel-input {
@@ -41,17 +45,17 @@ export const Form = styled.form`
     position: absolute;
     /* z-index: 1; */
     cursor: pointer;
-    top: 314px;
-    left: 50px;
+    top: 102px;
+    left: 37px;
 
-    @media screen and (min-width: 1440px) {
-      top: 314px;
-      left: 825px;
-    }
+    /* @media screen and (min-width: 1440px) {
+      top: 102px;
+      left: 37px;
+    } */
   }
 
   & .react-tel-input .form-control {
-    position: static;
+    /* position: static; */
     display: inline-flex;
     align-items: center;
     padding: 15px 13px 14px 13px;
@@ -104,6 +108,7 @@ export const EnterText = styled.h3`
 `;
 
 export const InputWrapp = styled.div`
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 345px;
@@ -122,10 +127,27 @@ export const Button = styled.button`
   line-height: 23.08px;
   color: var(--white);
   border: none;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: box-shadow 250ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  }
+`;
+
+export const TextPolicyLinks = styled.p`
+  display: inline;
+  margin-right: 5px;
+  color: var(--policy_gray);
+  font-family: ${(props) => props.theme.font.futura};
+  font-weight: ${(p) => p.theme.fontWeight.normal};
+  font-size: ${(p) => p.theme.fontSize.small};
+  line-height: 17.95px;
 `;
 
 export const TextPolicy = styled.p`
-  margin-bottom: 38px;
+  display: inline-block;
+  margin-bottom: 48px;
   color: var(--policy_gray);
   font-family: ${(props) => props.theme.font.futura};
   font-weight: ${(p) => p.theme.fontWeight.normal};
